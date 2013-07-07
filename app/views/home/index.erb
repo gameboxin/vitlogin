@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>Vitlogin-Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+  <link href="css/reset.css" type="text/css" rel="stylesheet" />
+<link href="css/dp_calendar.css" type="text/css" rel="stylesheet" />
+<link href="css/demo.css" type="text/css" rel="stylesheet" />
+<link href="themes/base/jquery.ui.all.css" type="text/css" rel="stylesheet" />
+  <link href="css/flat-ui.css" rel="stylesheet" media="screen">
+  <link href="css/custom.css" rel="stylesheet" media="screen">
+
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/jquery.knob.js"></script>
+  <script type="text/javascript" src="ui/jquery.ui.core.js"></script> 
+<script type="text/javascript" src="ui/jquery.ui.position.js"></script>
+<script type="text/javascript" src="ui/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+<script type="text/javascript" src="js/jquery.dp_calendar.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){  
+  
+  var events_array = new Array(
+    {
+      startDate: new Date(2013,06, 08, 09, 00),
+      endDate: new Date(2013,06, 13,07,00),
+      title: "Quiz-1",
+      description: "Quiz Week starts.",
+      priority: 2 // 1 = Low, 2 = Medium, 3 = Urgent
+       // 1 = Daily, 2 = Weekly, 3 = Monthly, 4 = Yearly
+    },
+    {
+      startDate: new Date(2013,06, 27, 09, 00),
+      title: "CAT-I",
+      description: "Cat I starts.",
+      priority: 3
+
+    },
+    {
+      startDate: new Date(2013,07, 21, 9, 00),
+      endDate: new Date(2013,07, 28, 9, 00),
+      title: "Quiz-2",
+      description: "Quiz Week starts.",
+      priority: 2
+    }
+  );  
+    
+  jQuery("#calendar").dp_calendar({
+    events_array: events_array
+  }); 
+});  
+</script>
+  <script type="text/javascript">
+      $(function($) {
+
+         if($(window).width()<1000 && $(window).width()>760)
+          $(".graph").knob({
+             'width':100
+          });
+          else
+             $(".graph").knob();
+      });
+  </script>
+
+</head>
+<body>
+<div class="container-fluid thewhole">
+  <div class="row-fluid">
+   <div class="span12 header"><a href="/">Vit Login</a></div>
+  </div>
+  <div class="row-fluid main-container">
+
+    <div class="span9">
+      <!-- Navigational Bar -->
+      <div class="row-fluid">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse-01"></button>
+            <div class="nav-collapse collapse" id="nav-collapse-01">
+              <ul class="nav">
+                <li class="active">
+                  <a href="/">
+                    Home </a>
+                </li>
+                <li>
+                  <a href="/messages">
+                    Messages
+                     </a>
+                  </li>
+                <li>
+                  <a href="/settings">
+                    Settings
+                  </a>
+                </li>
+                <li>
+                  <a href="/logout">
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </div><!--/.nav -->
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- Navigational Bar Ends -->
+      <!-- Attendance -->
+      <div class="row-fluid attendance">
+        <div class="span12">
+        <div class="row-fluid"><h2>Attendance</h2></div>
+          <div class="row-fluid">
+            <div class="span3 garphmain">
+              <pre>DTSP</pre>
+              <input class="graph" data-width="150" value="75" data-fgColor=#3498db data-readOnly=true>
+            </div>
+            <div class="span3 graphmain"><pre style="border: none; background-color: #3498db;">Physics</pre>
+              <input class="graph" data-width="150" value="35" data-fgColor=#e74c3c data-readOnly=true></div>
+            <div class="span3">
+              <pre >Theory of Compution</pre>
+              <input class="graph" data-width="150" value="85" data-fgColor=#3498db data-readOnly=true>
+            </div>
+            <div class="span3">
+              <pre >Principles of management</pre>
+              <input class="graph" data-width="150" value="90" data-fgColor=#3498db data-readOnly=true>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span3 garphmain">
+              <pre >DTSP</pre>
+              <input class="graph" data-width="150" value="75" data-fgColor=#3498db data-readOnly=true>
+            </div>
+            <div class="span3 graphmain"><pre>Physics</pre>
+              <input class="graph" data-width="150" value="85" data-fgColor=#3498db data-readOnly=true></div>
+            <div class="span3">
+              <pre>Theory of Compution</pre>
+              <input class="graph" data-width="150" value="45" data-fgColor=#e74c3c data-readOnly=true>
+            </div>
+            <div class="span3">
+              <pre>Principles of management</pre>
+              <input class="graph" data-width="150" value="90" data-fgColor=#3498db data-readOnly=true>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Attendance Ends -->
+      <!-- Events Calendar -->
+      <div class="row-fluid eventcalendar">
+        <div class="span12">
+      <div id="calendar" style="width: 100%;"></div>
+        </div>
+      </div>
+      <!-- Events Calendar Ends -->
+
+    </div>
+    <!-- Sidebar -->
+    <div class="span3">
+      <!-- Profile -->
+      <div class="row-fluid profiles">
+        <ul class="thumbnails">
+          <li class="span12">
+            <div class="thumbnail profile">
+              <img src="http://graph.facebook.com/flameaddict/picture?width=500&height=500" style="border-radius: 6px;" alt="">
+              <div class="profilename">
+              <h3>Prashanth Rajasekar</h3>
+              <p>Good :)</p>
+              </div>
+              <div class="row-fluid btngrp">
+                <div class="span4 btnprm" style="border-radius: 0px 0px 0px 6px;"><a  href="/messages"><i class="icon-envelope icon-white"></i>14 </a></div>
+                <div class="span4 btnprm"><a  href="/notifications"><i class="icon-globe icon-white"></i>15 </a></div>
+                <div class="span4 btnprm" style="border-radius: 0px 0px 6px 0px;"><a  href="/likes"> <i class="icon-heart icon-white"></i>13 </a></div>
+
+
+
+              </div>
+            </div>
+
+          </li>
+
+        </ul>
+    </div>
+      <!-- Profile Ends -->
+      <!-- Sidebar Menu -->
+      <div class="row-fluid">
+          <div class="span12 sidemenu">
+            <ul>
+              <li class="sidemenuin">
+                <i class="fui-list"></i>Attendance
+              </li>
+              <li class="sidemenuin">
+                <i class="fui-time"></i>Timetable
+              </li>
+              <li class="sidemenuin">
+                <i class="fui-new"></i>Marks
+              </li>
+              <li class="sidemenuin">
+                <i class="fui-chat"></i>Groups
+              </li>
+              <li class="sidemenuin">
+                <i class="fui-user"></i>Friends
+              </li>
+              <li class="sidemenuin">
+                <i class="fui-cmd"></i>Archive
+              </li>
+              <li class="sidemenuin">
+                <i class="fui-calendar-solid"></i>Course Page
+              </li>
+            </ul>
+          </div>
+      </div>
+      <!-- Sidebar Menu Ends -->
+  </div>
+    <!-- Sidebar Ends -->
+    </div>
+  <div class="row-fluid footer">
+    <div class="span12"><a href="/aboutprashanth">Who Made it and Why??</a> | Powered by Infinity Labs</div>
+  </div>
+</div>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
